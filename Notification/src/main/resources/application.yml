@@ -4,7 +4,7 @@ spring:
 
 
 server:
-  port: '8085'
+  port: 8085
 
 logging:
   level:
@@ -16,12 +16,12 @@ logging:
             sql:
               BasicBinder: TRACE
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
-  instance:
-    hostname: localhost
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#    fetch-registry: true
+#    register-with-eureka: true
+#  instance:
+#    hostname: localhost
+#    prefer-ip-address: true

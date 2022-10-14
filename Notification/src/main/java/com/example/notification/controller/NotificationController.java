@@ -14,5 +14,7 @@ public class NotificationController {
     {
         String email = userModel.getEmail();
     }
+
+
 }
 
