@@ -10,3 +10,8 @@ spring:
           auth: true
         starttls:
           enable: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+
