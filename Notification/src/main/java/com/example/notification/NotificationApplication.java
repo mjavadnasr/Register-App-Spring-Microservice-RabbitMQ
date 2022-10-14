@@ -1,19 +1,15 @@
-package com.example.register;
+package com.example.notification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-
 
 @SpringBootApplication
 @EnableEurekaClient
-public class RegisterApplication {
+public class NotificationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RegisterApplication.class, args);
+        SpringApplication.run(NotificationApplication.class, args);
     }
-
-
 
 }
