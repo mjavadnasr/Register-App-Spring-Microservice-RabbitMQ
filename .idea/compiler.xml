@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Register" />
         <module name="Notification" />
+        <module name="Mail" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Mail" options="-parameters" />
       <module name="Notification" options="-parameters" />
       <module name="Register" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
