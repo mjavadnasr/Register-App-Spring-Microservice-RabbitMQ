@@ -29,11 +29,11 @@ public class UserServiceImpl implements UserService {
 //        user.setPassword(passwordEncoder.encode(userModel.getPassword()));
         userDAO.save(user);
 
-        String url = "http://localhost:8085/notification/send-welcome/{userModel}";
-        Map<String, UserModel> urlParams = new HashMap<>();
-        urlParams.put("userModel", userModel);
+        String url = "http://localhost:8085/notification/send-welcome/{email}";
+        Map<String, String > urlParams = new HashMap<>();
+        urlParams.put("email", user.getEmail());
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
-        restTemplate.getForObject(builder.buildAndExpand(urlParams).toUri(), UserModel.class);
+        restTemplate.getForObject(builder.buildAndExpand(urlParams).toUri(), String.class);
 
     }
 
