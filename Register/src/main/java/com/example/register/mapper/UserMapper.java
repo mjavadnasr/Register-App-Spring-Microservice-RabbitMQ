@@ -11,7 +11,7 @@ public class UserMapper {
         user.setLastname(userModel.getLastname());
         user.setEmail(userModel.getEmail());
         user.setPassword(userModel.getPassword());
-        user.setPassword(userModel.getPassword());
+        user.setPhoneNumber(userModel.getPhoneNumber());
         return user;
 
     }

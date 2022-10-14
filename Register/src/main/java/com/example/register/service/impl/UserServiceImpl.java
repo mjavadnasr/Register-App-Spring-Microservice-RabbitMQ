@@ -7,6 +7,8 @@ import com.example.register.model.UserModel;
 import com.example.register.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public record UserServiceImpl(UserDAO userDAO )  implements UserService {
     @Override
@@ -16,5 +18,10 @@ public record UserServiceImpl(UserDAO userDAO )  implements UserService {
 //        user.setPassword(passwordEncoder.encode(userModel.getPassword()));
         userDAO.save(user);
 
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userDAO.findAll();
     }
 }
