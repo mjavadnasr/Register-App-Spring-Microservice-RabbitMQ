@@ -1,3 +1,21 @@
+spring:
+  application:
+    name: notification
+
+
+server:
+  port: '8085'
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
 eureka:
   client:
     service-url:
@@ -7,7 +25,3 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: true
-
-spring:
-  application:
-    name: notification
