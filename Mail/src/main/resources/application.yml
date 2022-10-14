@@ -3,13 +3,13 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: m.javad.nasrolla@gmail.com
-    password: Javad@90778500
+    password: uywqhebpiwadtnkb
     properties:
       mail:
         smtp:
           auth: true
-        starttls:
-          enable: true
+          starttls:
+            enable: true
 
   rabbitmq:
     host: localhost

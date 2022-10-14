@@ -1,7 +1,9 @@
 package com.example.mail.component;
 
+import com.example.mail.config.MailSenderService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
@@ -15,9 +17,7 @@ import java.io.ObjectInputStream;
 public class EmailService {
 
     @Autowired
-    private JavaMailSender emailSender;
-
-
+    private MailSenderService emailSender;
 
     @RabbitListener(queues = "Email")
     public void getEmail(byte[] message) throws IOException, ClassNotFoundException {
@@ -28,12 +28,7 @@ public class EmailService {
         bis.close();
         objectInput.close();
 
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        simpleMailMessage.setFrom("noreply@baeldung.com");
-        simpleMailMessage.setTo(email);
-        simpleMailMessage.setSubject("Welcome message");
-        simpleMailMessage.setText("Welcome to Our Application");
-        emailSender.send(simpleMailMessage);
+        emailSender.sendEmail(email);
     }
 
 }
